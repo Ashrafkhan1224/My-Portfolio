@@ -163,7 +163,107 @@ animation: floatImage 4s ease-in-out infinite;
     box-shadow: none;
 }
 
+
+
 /* About section layout */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: var(--snd-bg-color);
+  padding: 2rem;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4.5rem;
+  padding: 1.6rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 7rem;
+  flex-wrap: wrap; /* ✅ responsive on small screens */
+}
+
+/* Media wrapper for image/video */
+.media-wrapper-about {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/5; /* ✅ Keeps consistent ratio */
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.profile-img-about,
+.profile-video-about {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.5s ease;
+  border-radius: 1rem;
+}
+
+/* By default video hidden */
+.profile-video-about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* On hover: hide img, show video */
+.media-wrapper-about:hover .profile-img-about {
+  opacity: 0;
+}
+.media-wrapper-about:hover .profile-video-about {
+  opacity: 1;
+}
+
+/* Details on the right */
+.about-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.about-details {
+  margin-top: 2rem;
+}
+
+.about-details p {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  line-height: 1.8;
+}
+
+.about-details strong {
+  color: var(--main-color);
+}
+
+.about-details a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.about-details a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+/* About section layout
 .about{
     display: flex;
     justify-content: center;
@@ -175,13 +275,13 @@ animation: floatImage 4s ease-in-out infinite;
     text-align: center;
     font-size: 4.5rem;
     padding: 1.6rem;
-}
+} */
 
-.about-container {
+/* .about-container {
     display: flex;
     align-items: left;
-    gap: 7rem; /* Space between image and content */
-  }
+    gap: 7rem; /* Space between image and content 
+  } */
   
   /* Image on the left */
   /* .about-img { */
@@ -189,12 +289,12 @@ animation: floatImage 4s ease-in-out infinite;
     /* text-align: center; Center the image */
    /* }  */
 
-  .about-img img{
+  /* .about-img img{
     width: 65vh;
-}
+} */
   
   /* Details on the right */
-  .about-content {
+  /* .about-content {
     flex: auto;
   }
 
@@ -219,7 +319,7 @@ animation: floatImage 4s ease-in-out infinite;
   
   .about-details a:hover {
     text-decoration: underline;
-  }
+  } */
   
 
 /* Skill section Design */

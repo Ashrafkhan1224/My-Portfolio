@@ -68,3 +68,18 @@ const typed = new Typed(".multiple-text", {
   backspeed: 70,
   loop: true,
 });
+
+// About page
+const aboutWrapper = document.querySelector(".media-wrapper-about");
+const aboutVideo = document.querySelector(".profile-video-about");
+
+if (aboutWrapper && aboutVideo) {
+  aboutWrapper.addEventListener("mouseenter", () => {
+    aboutVideo.currentTime = 0;
+    aboutVideo.play();
+  });
+  aboutWrapper.addEventListener("mouseleave", () => {
+    aboutVideo.pause();
+    aboutVideo.currentTime = 0;
+  });
+}
